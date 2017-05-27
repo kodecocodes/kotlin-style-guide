@@ -294,7 +294,7 @@ if (horseGiftedByTrojans) {
 
 Unlike Java, direct access to fields in Kotlin is preferred. 
 
-If getters and setters are required, they should be declared [following Kotlin conventions](https://kotlinlang.org/docs/reference/properties.html) rather than as separate methods.
+If custom getters and setters are required, they should be declared [following Kotlin conventions](https://kotlinlang.org/docs/reference/properties.html) rather than as separate methods.
 
 ## Brace Style
 
