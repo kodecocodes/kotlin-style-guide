@@ -63,7 +63,7 @@ From now on, projects you create _should_ follow the correct style guidelines.
 - [Semicolons](#semicolons)
 - [Getters & Setters](#getters--setters)
 - [Brace Style](#brace-style)
-- [Switch Statements](#switch-statements)
+- [When Statements](#when-statements)
 - [Annotations](#annotations)
 - [Types](#types)
   + [Type Inference](#type-inference)
@@ -352,45 +352,27 @@ if (someTest) {
 if (someTest) { doSomethingElse() }
 ```
 
+## When Statements
 
-## Switch Statements
-
-**TODO: UPDATE**
-
-Switch statements fall-through by default, but this can be unintuitive. If you require this behavior, comment it.
-
-Alway include the `default` case.
+Unlike `switch` statements in Java, `when` statements do not fall through. Separate cases using commas if they should be handled the same way. Always include the else case.
 
 __BAD:__
 
 ```kotlin
-switch (anInput) {
-  case 1:
-    doSomethingForCaseOne()
-  case 2:
-    doSomethingForCaseOneOrTwo()
-    break;
-  case 3:
-    doSomethingForCaseOneOrThree()
-    break;
+when (anInput) {
+  1 -> doSomethingForCaseOne()
+  2 -> doSomethingForCaseOneOrTwo()
+  3 -> doSomethingForCaseThree()
 }
 ```
 
 __GOOD:__
 
 ```kotlin
-switch (anInput) {
-  case 1:
-    doSomethingForCaseOne()
-    // fall through
-  case 2:
-    doSomethingForCaseOneOrTwo()
-    break;
-  case 3:
-    doSomethingForCaseOneOrThree()
-    break;
-  default:
-    break;
+when (anInput) {
+  1, 2 -> doSomethingForCaseOneOrTwo()
+  3 -> doSomethingForCaseThree()
+  else -> println("No case satisfied")
 }
 ```
 
