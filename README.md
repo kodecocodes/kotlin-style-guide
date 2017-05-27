@@ -55,6 +55,7 @@ From now on, projects you create _should_ follow the correct style guidelines.
   + [Visibility Modifiers](#visibility-modifiers)
   + [Fields & Variables](#fields--variables)
   + [Classes](#classes)
+  + [Data Type Objects](#data-type-objects)
   + [Enum Classes](#enum-classes)
 - [Spacing](#spacing)
   + [Indentation](#indentation)
@@ -200,6 +201,25 @@ twitterHandle: String
 
 Exactly one class per source file, although inner classes are encouraged where scoping appropriate.
 
+### Data Type Objects
+
+Prefer data classes for simple data holding objects.
+
+__BAD:__
+
+```kotlin
+class Person(val name: String) {
+  override fun toString() : String {
+    return "Person(name=$name)"
+  }
+}
+```
+
+__GOOD:__
+
+```kotlin
+data class Person(val name: String)
+```
 
 ### Enum Classes
 
