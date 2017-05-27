@@ -52,7 +52,7 @@ From now on, projects you create _should_ follow the correct style guidelines.
   + [Variables & Parameters](#variables--parameters)
   + [Misc](#misc)
 - [Declarations](#declarations)
-  + [Access Level Modifiers](#access-level-modifiers)
+  + [Visibility Modifiers](#visibility-modifiers)
   + [Fields & Variables](#fields--variables)
   + [Classes](#classes)
   + [Enum Classes](#enum-classes)
@@ -162,6 +162,24 @@ findPostById
 ```
 
 ## Declarations
+
+### Visibility Modifiers
+
+Only include visibility modifiers if you need something other than the default of public.
+
+**BAD:**
+
+```kotlin
+public val wideOpenProperty = 1
+private val myOwnPrivateProperty = "private"
+```
+
+**GOOD:***
+
+```kotlin
+val wideOpenProperty = 1
+private val myOwnPrivateProperty = "private"
+```
 
 ### Access Level Modifiers
 
@@ -552,6 +570,7 @@ This style guide is a collaborative effort from the most stylish
 raywenderlich.com team members:
 
 - [Darryl Bayliss](https://github.com/DarrylBayliss)
+- [Tom Blankenship](https://github.com/tgblank)
 - [Sam Davies](https://github.com/sammyd)
 - [Mic Pringle](https://github.com/micpringle)
 - [Ellen Shapiro](https://github.com/designatednerd)
