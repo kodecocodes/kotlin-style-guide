@@ -1,8 +1,6 @@
 # The Official raywenderlich.com Kotlin Style Guide (in progress)
 
-This style guide is different from other you may see, because the focus is
-centered on readability for print and the web. We created this style guide to
-keep the code in our tutorials consistent.
+This style guide is different from others you may see, because the focus is centered on readability for print and the web. We created this style guide to keep the code in our tutorials consistent.
 
 Our overarching goals are __conciseness__, __readability__ and __simplicity__.
 
@@ -10,33 +8,34 @@ You should also check out our other style guides:
 
 * [Swift](https://github.com/raywenderlich/swift-style-guide)
 * [Objective-C](https://github.com/raywenderlich/objective-c-style-guide)
-* [Java] (https://github.com/raywenderlich/java-style-guide)
+* [Java](https://github.com/raywenderlich/java-style-guide)
 
 ## Inspiration
 
-This style-guide is somewhat of a mash-up between the existing Java language
-style guides, and a tutorial-readability focused Swift style-guide. The language
-guidance is drawn from the
-[Android contributors style guide](https://source.android.com/source/code-style.html)
-and the
-[Google Java Style Guide](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html).
-Alterations to support additional readability in tutorials were inspired by the
-[raywenderlich.com Swift style guide](https://github.com/raywenderlich/swift-style-guide).
+This style-guide is somewhat of a mash-up between the existing Kotlin language style guides, and a tutorial-readability focused Swift style-guide. The language guidance is drawn from: 
+
+- The [Kotlin Coding Conventions](https://kotlinlang.org/docs/reference/coding-conventions.html) 
+- The [Android contributors style guide](https://source.android.com/source/code-style.html)
+- The [Google Java Style Guide](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html).
+
+Alterations to support additional readability in tutorials were inspired by the [raywenderlich.com Swift style guide](https://github.com/raywenderlich/swift-style-guide).
 
 ## Android Studio Coding Style
 
-It is possible to get Android Studio to adhere to these style guidelines, via
-a rather complex sequence of menus. To make it easier, we've provided a coding
-style that can be imported into Android Studio.
+It is possible to get Android Studio to adhere to these style guidelines, via a rather complex sequence of menus. To make it easier, we've provided a coding style that can be imported into Android Studio.
 
-First, clone this repository and run `install.sh`.
+First, clone this repository and run `install.sh` (**UPDATED FILE COMING SOON**).
 
 Then, open Android Studio. To set this codestyle as the default, select
 __File > Other Settings > Default Settings...__:
 
+**UPDATED IMAGE COMING SOON**
+
 ![Default Settings](resources/default_settings.png)
 
 In __Editor > Code Style__, choose the __Scheme__ to be __raywenderlich.com__:
+
+**UPDATED IMAGE COMING SOON**
 
 ![Setting the Scheme](resources/setting_scheme.png)
 
@@ -53,23 +52,26 @@ From now on, projects you create _should_ follow the correct style guidelines.
   + [Variables & Parameters](#variables--parameters)
   + [Misc](#misc)
 - [Declarations](#declarations)
-  + [Access Level Modifiers](#access-level-modifiers)
+  + [Visibility Modifiers](#visibility-modifiers)
   + [Fields & Variables](#fields--variables)
   + [Classes](#classes)
+  + [Data Type Objects](#data-type-objects)
   + [Enum Classes](#enum-classes)
 - [Spacing](#spacing)
   + [Indentation](#indentation)
   + [Line Length](#line-length)
   + [Vertical Spacing](#vertical-spacing)
+- [Semicolons](#semicolons)
 - [Getters & Setters](#getters--setters)
 - [Brace Style](#brace-style)
-- [Switch Statements](#switch-statements)
+- [When Statements](#when-statements)
 - [Annotations](#annotations)
+- [Types](#types)
+  + [Type Inference](#type-inference)
+  + [Constants vs. Variables](#constants-vs-variables)
+  + [Companion Objects](#companion-objects)
+  + [Optionals](#optionals)
 - [XML Guidance](#xml-guidance)
-  + [XML File Names](#xml-file-names)
-  + [Indentation](#indentation-1)
-  + [Use Context-Specific XML Files](#use-context-specific-xml-files)
-  + [XML Attribute Ordering](#xml-attribute-ordering)
 - [Language](#language)
 - [Copyright Statement](#copyright-statement)
 - [Smiley Face](#smiley-face)
@@ -78,23 +80,21 @@ From now on, projects you create _should_ follow the correct style guidelines.
 
 ## Nomenclature
 
-On the whole, naming should follow Java standards.
+On the whole, naming should follow Java standards, as Kotlin is a JVM-compatible language.
 
 ### Packages
 
-Package names are all __lower-case__, multiple words concatenated together,
-without
-hypens or underscores:
+Package names are similar to Java: all __lower-case__, multiple words concatenated together, without hypens or underscores:
 
 __BAD__:
 
-```java
+```kotlin
 com.RayWenderlich.funky_widget
 ```
 
 __GOOD__:
 
-```java
+```kotlin
 com.raywenderlich.funkywidget
 ```
 
@@ -110,40 +110,38 @@ Written in __lowerCamelCase__. For example `setValue`.
 
 Written in __lowerCamelCase__.
 
-Static fields should be written in __uppercase__, with an underscore separating
-words:
+Static fields should be written in __uppercase__, with an underscore separating words:
 
-```java
-public static final int THE_ANSWER = 42;
+```kotlin
+public static val THE_ANSWER = 42
 ```
 
-As distasteful as it is, field naming should follow the Android source code
-naming conventions:
+As distasteful as it is, field naming should follow the Android source code naming conventions:
 
 - Non-public, non-static field names start with an `m`.
 - Static field names start with an `s`.
 
 For example:
 
-```java
-public class MyClass {
-  public static final int SOME_CONSTANT = 42;
-  public int publicField;
-  private static MyClass sSingleton;
-  int mPackagePrivate;
-  private int mPrivate;
-  protected int mProtected;
+```kotlin
+open class MyClass {
+  public static val SOME_CONSTANT = 42
+  public publicField: Int
+  private static let sSingleton = MyClass()
+  mPackagePrivate: Int?
+  private mPrivate: Int?
+  protected mProtected: Int? 
 }
 ```
 
-> __Note:__ You can set Android Studio to follow this convention. See this SO
-> link for details http://stackoverflow.com/questions/22732722/intellij-android-studio-member-variable-prefix
+**TODO: UPDATE**
+> __Note:__ You can set Android Studio to follow this convention. See this SO link for details http://stackoverflow.com/questions/22732722/intellij-android-studio-member-variable-prefix
 
 ### Variables & Parameters
 
 Written in __lowerCamelCase__.
 
-Single character values to be avoided except for temporary looping variables.
+Single character values must be avoided, except for temporary looping variables.
 
 ### Misc
 
@@ -151,65 +149,93 @@ In code, acronyms should be treated as words. For example:
 
 __BAD:__
 
-```java
+```kotlin
 XMLHTTPRequest
-String URL
+URL: String? 
 findPostByID
 ```
 __GOOD:__
 
-```java
+```kotlin
 XmlHttpRequest
-String url
+url: String
 findPostById
 ```
 
 ## Declarations
 
+### Visibility Modifiers
+
+Only include visibility modifiers if you need something other than the default of public.
+
+**BAD:**
+
+```kotlin
+public val wideOpenProperty = 1
+private val myOwnPrivateProperty = "private"
+```
+
+**GOOD:***
+
+```kotlin
+val wideOpenProperty = 1
+private val myOwnPrivateProperty = "private"
+```
+
 ### Access Level Modifiers
 
-Access level modifiers should be explicitly defined for classes, methods and
-member variables.
+Access level modifiers should be explicitly defined for classes, methods and member variables.
 
 ### Fields & Variables
 
 Prefer single declaration per line.
 
-__BAD:__
-
-```java
-String username, twitterHandle;
-```
-
 __GOOD:__
 
-```java
-String username;
-String twitterHandle;
+```kotlin
+username: String
+twitterHandle: String
 ```
 
 ### Classes
 
-Exactly one class per source file, although inner classes are encouraged where
-scoping appropriate.
+Exactly one class per source file, although inner classes are encouraged where scoping appropriate.
 
+### Data Type Objects
+
+Prefer data classes for simple data holding objects.
+
+__BAD:__
+
+```kotlin
+class Person(val name: String) {
+  override fun toString() : String {
+    return "Person(name=$name)"
+  }
+}
+```
+
+__GOOD:__
+
+```kotlin
+data class Person(val name: String)
+```
 
 ### Enum Classes
 
-Enum classes should be avoided where possible, due to a large memory overhead.
-Static constants are preferred. See http://developer.android.com/training/articles/memory.html#Overhead
-for further details.
+**TODO: UPDATE FOR KOTLIN** *(This is java-only and may not be true with Kotlin)*
+
+Enum classes should be avoided where possible, due to a large memory overhead. Static constants are preferred. See http://developer.android.com/training/articles/memory.html#Overhead for further details.
 
 Enum classes without methods may be formatted without line-breaks, as follows:
 
-```java
+```kotlin
 private enum CompassDirection { EAST, NORTH, WEST, SOUTH }
 ```
 
 ## Spacing
 
-Spacing is especially important in raywenderlich.com code, as code needs to be
-easily readable as part of the tutorial. Java does not lend itself well to this.
+Spacing is especially important in raywenderlich.com code, as code needs to be easily readable as part of the tutorial. 
 
 ### Indentation
 
@@ -221,17 +247,17 @@ Indentation for blocks uses 2 spaces (not the default 4):
 
 __BAD:__
 
-```java
-for (int i = 0; i < 10; i++) {
+```kotlin
+for (i in 0..9) {
     Log.i(TAG, "index=" + i);
 }
 ```
 
 __GOOD:__
 
-```java
-for (int i = 0; i < 10; i++) {
-  Log.i(TAG, "index=" + i);
+```kotlin
+for (i in 0..9) {
+  Log.i(TAG, "index=" + i)
 }
 ```
 
@@ -241,16 +267,16 @@ Indentation for line wraps should use 4 spaces (not the default 8):
 
 __BAD:__
 
-```java
-CoolUiWidget widget =
-        someIncrediblyLongExpression(that, reallyWouldNotFit, on, aSingle, line);
+```kotlin
+val widget: CoolUiWidget =
+        someIncrediblyLongExpression(that, reallyWouldNotFit, on, aSingle, line)
 ```
 
 __GOOD:__
 
-```java
-CoolUiWidget widget =
-    someIncrediblyLongExpression(that, reallyWouldNotFit, on, aSingle, line);
+```kotlin
+val widget: CoolUiWidget =
+    someIncrediblyLongExpression(that, reallyWouldNotFit, on, aSingle, line)
 ```
 
 ### Line Length
@@ -260,31 +286,46 @@ Lines should be no longer than 100 characters long.
 
 ### Vertical Spacing
 
-There should be exactly one blank line between methods to aid in visual clarity 
-and organization. Whitespace within methods should separate functionality, but 
-having too many sections in a method often means you should refactor into
-several methods.
+There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
+
+## Semicolons
+
+Semicolons ~~are dead to us~~ should be avoided wherever possible in Kotlin. 
+
+__BAD__:
+
+```kotlin
+val horseGiftedByTrojans = true;
+if (horseGiftedByTrojans) {
+  bringHorseIntoWalledCity();
+}
+```
+
+__GOOD__:
+
+```kotlin
+val horseGiftedByTrojans = true
+if (horseGiftedByTrojans) {
+  bringHorseIntoWalledCity()
+}
+```
 
 ## Getters & Setters
 
-For external access to fields in classes, getters and setters are preferred to
-direct access of the fields. Fields should rarely be `public`.
+Unlike Java, direct access to fields in Kotlin is preferred. 
 
-However, it is encouraged to use the field directly when accessing internally
-(i.e. from inside the class). This is a performance optimization recommended
-by Google: http://developer.android.com/training/articles/perf-tips.html#GettersSetters
+If custom getters and setters are required, they should be declared [following Kotlin conventions](https://kotlinlang.org/docs/reference/properties.html) rather than as separate methods.
 
 ## Brace Style
 
-Only trailing closing-braces are awarded their own line. All others appear the
-same line as preceding code:
+Only trailing closing-braces are awarded their own line. All others appear the same line as preceding code:
 
 __BAD:__
 
-```java
+```kotlin
 class MyClass
 {
-  void doSomething()
+  fun doSomething()
   {
     if (someTest)
     {
@@ -300,9 +341,9 @@ class MyClass
 
 __GOOD:__
 
-```java
+```kotlin
 class MyClass {
-  void doSomething() {
+  fun doSomething() {
     if (someTest) {
       // ...
     } else {
@@ -312,159 +353,176 @@ class MyClass {
 }
 ```
 
-Conditional statements are always required to be enclosed with braces,
-irrespective of the number of lines required.
+Conditional statements are always required to be enclosed with braces, irrespective of the number of lines required.
 
 __BAD:__
 
-```java
+```kotlin
 if (someTest)
-  doSomething();
-if (someTest) doSomethingElse();
+  doSomething()
+if (someTest) doSomethingElse()
 ```
 
 __GOOD:__
 
-```java
+```kotlin
 if (someTest) {
-  doSomething();
+  doSomething()
 }
-if (someTest) { doSomethingElse(); }
+if (someTest) { doSomethingElse() }
 ```
 
+## When Statements
 
-## Switch Statements
-
-Switch statements fall-through by default, but this can be unintuitive. If you
-require this behavior, comment it.
-
-Alway include the `default` case.
+Unlike `switch` statements in Java, `when` statements do not fall through. Separate cases using commas if they should be handled the same way. Always include the else case.
 
 __BAD:__
 
-```java
-switch (anInput) {
-  case 1:
-    doSomethingForCaseOne();
-  case 2:
-    doSomethingForCaseOneOrTwo();
-    break;
-  case 3:
-    doSomethingForCaseOneOrThree();
-    break;
+```kotlin
+when (anInput) {
+  1 -> doSomethingForCaseOne()
+  2 -> doSomethingForCaseOneOrTwo()
+  3 -> doSomethingForCaseThree()
 }
 ```
 
 __GOOD:__
 
-```java
-switch (anInput) {
-  case 1:
-    doSomethingForCaseOne();
-    // fall through
-  case 2:
-    doSomethingForCaseOneOrTwo();
-    break;
-  case 3:
-    doSomethingForCaseOneOrThree();
-    break;
-  default:
-    break;
+```kotlin
+when (anInput) {
+  1, 2 -> doSomethingForCaseOneOrTwo()
+  3 -> doSomethingForCaseThree()
+  else -> println("No case satisfied")
 }
 ```
 
 ## Annotations
 
-Standard annotations should be used - in particular `@Override`. This should
-appear the line before the function declaration.
+Standard annotations should be used - in particular `override`. This should appear on the same line as the function declaration.
 
 __BAD:__
 
-```java
-protected void onCreate(Bundle savedInstanceState) {
+```kotlin
+fun onCreate(savedInstanceState: Bundle?) {
   super.onCreate(savedInstanceState);
 }
 ```
 
 __GOOD:__
 
-```java
-@Override
-protected void onCreate(Bundle savedInstanceState) {
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
   super.onCreate(savedInstanceState);
 }
 ```
 
+## Types 
+
+Always use Kotlin's native types when available. Kotlin is JVM-compatible so **[TODO: more info]**
+
+### Type Inference
+
+Type inference should be preferred where possible to explicitly declared types. 
+
+__BAD:__
+
+```kotlin
+val something: MyType = MyType()
+val meaningOfLife: Int = 42
+```
+
+__GOOD:__
+
+```kotlin
+val something = MyType()
+val meaningOfLife = 42
+```
+
+### Constants vs. Variables 
+
+Constants are defined using the `val` keyword, and variables with the `var` keyword. Always use `val` instead of `var` if the value of the variable will not change.
+
+*Tip*: A good technique is to define everything using `val` and only change it to `var` if the compiler complains!
+
+### Companion Objects
+
+** TODO: A bunch of stuff about companion objects **
+
+### Optionals
+
+Declare variables and function return types as optional with `?` where a `null` value is acceptable.
+
+Use implicitly unwrapped types declared with `!!` only for instance variables that you know will be initialized before use, such as subviews that will be set up in `onCreate` for an Activity or `onCreateView` for a Fragment.
+
+When naming optional variables and parameters, avoid naming them like `optionalString` or `maybeView` since their optional-ness is already in the type declaration.
+
+When accessing an optional value, use optional chaining if the value is only accessed once or if there are many optionals in the chain:
+
+```kotlin
+editText?.setText("foo")
+```
+
+**TODO: Update the rest of this section from Swift**
+
+Use optional binding when it's more convenient to unwrap once and perform multiple operations:
+
+```swift
+if let textContainer = self.textContainer {
+  // do many things with textContainer
+}
+```
+
+For optional binding, shadow the original name when appropriate rather than using names like unwrappedView or actualLabel.
+
+```swift
+Preferred:
+
+var subview: UIView?
+var volume: Double?
+
+// later on...
+if let subview = subview, let volume = volume {
+  // do something with unwrapped subview and volume
+}
+```
+
+Not Preferred:
+
+```swift
+var optionalSubview: UIView?
+var volume: Double?
+
+if let unwrappedSubview = optionalSubview {
+  if let realVolume = volume {
+    // do something with unwrappedSubview and realVolume
+  }
+}
+``` 
 
 ## XML Guidance
 
-Since Android uses XML extensively in addition to Java, we have some rules
-specific to XML.
-
-### XML File Names
-
-View-based XML files should be prefixed with the type of view that they
-represent.
-
-__BAD:__
-
-- `login.xml`
-- `main_screen.xml`
-- `rounded_edges_button.xml`
-
-__GOOD:__
-
-- `activity_login.xml`
-- `fragment_main_screen.xml`
-- `button_rounded_edges.xml`
-
-### Indentation
-
-Similarly to Java, indentation should be __two characters__.
-
-### Use Context-Specific XML Files
-
-Wherever possible XML resource files should be used:
-
-- Strings => `res/values/strings.xml`
-- Styles => `res/values/styles.xml`
-- Colors => `res/color/colors.xml`
-- Animations => `res/anim/`
-- Drawable => `res/drawable`
-
-
-### XML Attribute Ordering
-
-Where appropriate, XML attributes should appear in the following order:
-
-- `id` attribute
-- `layout_*` attributes
-- style attributes such as `gravity` or `textColor`
-- value attributes such as `text` or `src`
-
-Within each of these groups, the attributes should be ordered alphabetically.
+Since Android uses XML extensively in addition to Kotlin and Java, we have some rules specific to XML. These can be found in our [Java code standards](https://github.com/raywenderlich/java-style-guide#xml-guidance
 
 
 ## Language
 
-Use US English spelling.
+Use `en-US` English spelling. 🇺🇸
 
 __BAD:__
 
-```java
-String colour = "red";
+```kotlin
+val colourName = "red"
 ```
 
 __GOOD:__
 
-```java
-String color = "red";
+```kotlin
+colorName = "red"
 ```
 
 ## Copyright Statement
 
-The following copyright statement should be included at the top of every source
-file:
+The following copyright statement should be included at the top of every source file:
 
     /*
      * Copyright (c) 2017 Razeware LLC
@@ -498,12 +556,7 @@ file:
 
 ## Smiley Face
 
-Smiley faces are a very prominent style feature of the raywenderlich.com site!
-It is very important to have the correct smile signifying the immense amount of
-happiness and excitement for the coding topic. The closing square bracket ] is
-used because it represents the largest smile able to be captured using ASCII
-art. A closing parenthesis ) creates a half-hearted smile, and thus is not
-preferred.
+Smiley faces are a very prominent style feature of the raywenderlich.com site! It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic. The closing square bracket ] is used because it represents the largest smile able to be captured using ASCII art. A closing parenthesis ) creates a half-hearted smile, and thus is not preferred.
 
 Bad:
 
@@ -519,6 +572,8 @@ This style guide is a collaborative effort from the most stylish
 raywenderlich.com team members:
 
 - [Darryl Bayliss](https://github.com/DarrylBayliss)
+- [Tom Blankenship](https://github.com/tgblank)
 - [Sam Davies](https://github.com/sammyd)
 - [Mic Pringle](https://github.com/micpringle)
+- [Ellen Shapiro](https://github.com/designatednerd)
 - [Ray Wenderlich](https://github.com/rwenderlich)
