@@ -108,34 +108,25 @@ Written in __lowerCamelCase__. For example `setValue`.
 
 ### Fields
 
-Written in __lowerCamelCase__.
+Generally, written in __lowerCamelCase__. Fields should **not** be named with Hungarian notation, as Hungarian notation is [erroneously thought](http://jakewharton.com/just-say-no-to-hungarian-notation/) to be recommended by Google.
 
-Static fields should be written in __uppercase__, with an underscore separating words:
-
-```kotlin
-public static val THE_ANSWER = 42
-```
-
-As distasteful as it is, field naming should follow the Android source code naming conventions:
-
-- Non-public, non-static field names start with an `m`.
-- Static field names start with an `s`.
-
-For example:
+Example field names:
 
 ```kotlin
-open class MyClass {
-  public static val SOME_CONSTANT = 42
-  public publicField: Int
-  private static let sSingleton = MyClass()
-  mPackagePrivate: Int?
-  private mPrivate: Int?
-  protected mProtected: Int? 
+class MyClass {
+  var publicField: Int = 0
+  val person = Person()
+  private var privateField: Int?
 }
 ```
 
-**TODO: UPDATE**
-> __Note:__ You can set Android Studio to follow this convention. See this SO link for details http://stackoverflow.com/questions/22732722/intellij-android-studio-member-variable-prefix
+Constant values in the companion object should be written in __uppercase__, with an underscore separating words:
+
+```kotlin
+companion object {
+  const val THE_ANSWER = 42
+}
+```
 
 ### Variables & Parameters
 
@@ -577,3 +568,4 @@ raywenderlich.com team members:
 - [Mic Pringle](https://github.com/micpringle)
 - [Ellen Shapiro](https://github.com/designatednerd)
 - [Ray Wenderlich](https://github.com/rwenderlich)
+- [Joe Howard](https://github.com/orionthwake)
