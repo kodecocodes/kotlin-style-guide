@@ -440,15 +440,15 @@ Constants are defined using the `val` keyword, and variables with the `var` keyw
 
 ** TODO: A bunch of stuff about companion objects **
 
-### Optionals
+### Nullable Types
 
-Declare variables and function return types as optional with `?` where a `null` value is acceptable.
+Declare variables and function return types as nullable with `?` where a `null` value is acceptable.
 
 Use implicitly unwrapped types declared with `!!` only for instance variables that you know will be initialized before use, such as subviews that will be set up in `onCreate` for an Activity or `onCreateView` for a Fragment.
 
-When naming optional variables and parameters, avoid naming them like `optionalString` or `maybeView` since their optional-ness is already in the type declaration.
+When naming nullable variables and parameters, avoid naming them like `nullableString` or `maybeView` since their nullability is already in the type declaration.
 
-When accessing an optional value, use optional chaining if the value is only accessed once or if there are many optionals in the chain:
+When accessing a nullable value, use the safe call operator if the value is only accessed once or if there are many nullables in the chain:
 
 ```kotlin
 editText?.setText("foo")
