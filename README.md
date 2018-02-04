@@ -509,7 +509,7 @@ val colourName = "red"
 __GOOD:__
 
 ```kotlin
-colorName = "red"
+val colorName = "red"
 ```
 
 ## Copyright Statement
