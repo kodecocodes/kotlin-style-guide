@@ -25,20 +25,9 @@ Alterations to support additional readability in tutorials were inspired by the 
 
 It is possible to get Android Studio to adhere to these style guidelines, via a rather complex sequence of menus. To make it easier, we've provided a coding style that can be imported into Android Studio.
 
-First, clone this repository and run `install.sh` (**UPDATED FILE COMING SOON**).
+The file can be found [here](https://koenig-media.raywenderlich.com/uploads/2018/03/rwstyle.xml_.zip).
 
-Then, open Android Studio. To set this codestyle as the default, select
-__File > Other Settings > Default Settings...__:
-
-**UPDATED IMAGE COMING SOON**
-
-![Default Settings](resources/default_settings.png)
-
-In __Editor > Code Style__, choose the __Scheme__ to be __raywenderlich.com__:
-
-**UPDATED IMAGE COMING SOON**
-
-![Setting the Scheme](resources/setting_scheme.png)
+To install the file, open Android Studio Settings and go to **Editor > Code Style > Kotlin**, then click the gear menu and choose **Import Scheme...**.
 
 From now on, projects you create _should_ follow the correct style guidelines.
 
