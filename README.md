@@ -280,6 +280,13 @@ Lines should be no longer than 100 characters long.
 
 There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
 
+## Comments
+
+When they are needed, use comments to explain **why** a particular piece of code does something. Comments must be kept up-to-date or deleted.
+
+Avoid block comments inline with code, as the code should be as self-documenting as possible. *Exception: This does not apply to those comments used to generate documentation.*
+
+
 ## Semicolons
 
 Semicolons ~~are dead to us~~ should be avoided wherever possible in Kotlin. 
