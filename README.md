@@ -156,7 +156,7 @@ public val wideOpenProperty = 1
 private val myOwnPrivateProperty = "private"
 ```
 
-**GOOD:***
+**GOOD:**
 
 ```kotlin
 val wideOpenProperty = 1
@@ -385,7 +385,7 @@ __BAD:__
 
 ```kotlin
 fun onCreate(savedInstanceState: Bundle?) {
-  super.onCreate(savedInstanceState);
+  super.onCreate(savedInstanceState)
 }
 ```
 
@@ -393,7 +393,7 @@ __GOOD:__
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
-  super.onCreate(savedInstanceState);
+  super.onCreate(savedInstanceState)
 }
 ```
 
@@ -482,7 +482,7 @@ if let unwrappedSubview = optionalSubview {
 
 ## XML Guidance
 
-Since Android uses XML extensively in addition to Kotlin and Java, we have some rules specific to XML. These can be found in our [Java code standards](https://github.com/raywenderlich/java-style-guide#xml-guidance
+Since Android uses XML extensively in addition to Kotlin and Java, we have some rules specific to XML. These can be found in our [Java code standards](https://github.com/raywenderlich/java-style-guide#xml-guidance)
 
 
 ## Language
