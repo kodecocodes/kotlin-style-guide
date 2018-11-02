@@ -361,7 +361,7 @@ __BAD:__
 
 ```kotlin
 when (anInput) {
-  1 -> doSomethingForCaseOne()
+  1 -> doSomethingForCaseOneOrTwo()
   2 -> doSomethingForCaseOneOrTwo()
   3 -> doSomethingForCaseThree()
 }
@@ -482,7 +482,7 @@ if let unwrappedSubview = optionalSubview {
 
 ## XML Guidance
 
-Since Android uses XML extensively in addition to Kotlin and Java, we have some rules specific to XML. These can be found in our [Java code standards](https://github.com/raywenderlich/java-style-guide#xml-guidance
+Since Android uses XML extensively in addition to Kotlin and Java, we have some rules specific to XML. These can be found in our [Java code standards](https://github.com/raywenderlich/java-style-guide#xml-guidance)
 
 
 ## Language
@@ -498,7 +498,7 @@ val colourName = "red"
 __GOOD:__
 
 ```kotlin
-colorName = "red"
+val colorName = "red"
 ```
 
 ## Copyright Statement
