@@ -400,6 +400,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
 ## Types 
 
 Always use Kotlin's native types when available. Kotlin is JVM-compatible so **[TODO: more info]**
+```kotlin
+kotlin.Byte, kotlin.UByte, kotlin.Short, kotlin.UShort, kotlin.Int, kotlin.UInt, kotlin.Long, kotlin.ULong, kotlin.Float, kotlin.Double
+```
 
 ### Type Inference
 
