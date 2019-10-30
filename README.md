@@ -377,25 +377,6 @@ when (anInput) {
 }
 ```
 
-## Annotations
-
-Standard annotations should be used - in particular `override`. This should appear on the same line as the function declaration.
-
-__BAD:__
-
-```kotlin
-fun onCreate(savedInstanceState: Bundle?) {
-  super.onCreate(savedInstanceState);
-}
-```
-
-__GOOD:__
-
-```kotlin
-override fun onCreate(savedInstanceState: Bundle?) {
-  super.onCreate(savedInstanceState);
-}
-```
 
 ## Types 
 
