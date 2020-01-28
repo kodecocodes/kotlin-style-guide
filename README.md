@@ -505,6 +505,7 @@ colorName = "red"
 
 The following copyright statement should be included at the top of every source file:
 
+```
 /* 
  * Copyright (c) 2020 Razeware LLC
  * 
@@ -538,6 +539,7 @@ The following copyright statement should be included at the top of every source 
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+ ```
  
 ## Smiley Face
 
