@@ -439,42 +439,7 @@ When accessing a nullable value, use the safe call operator if the value is only
 editText?.setText("foo")
 ```
 
-**TODO: Update the rest of this section from Swift**
 
-Use optional binding when it's more convenient to unwrap once and perform multiple operations:
-
-```swift
-if let textContainer = self.textContainer {
-  // do many things with textContainer
-}
-```
-
-For optional binding, shadow the original name when appropriate rather than using names like unwrappedView or actualLabel.
-
-```swift
-Preferred:
-
-var subview: UIView?
-var volume: Double?
-
-// later on...
-if let subview = subview, let volume = volume {
-  // do something with unwrapped subview and volume
-}
-```
-
-Not Preferred:
-
-```swift
-var optionalSubview: UIView?
-var volume: Double?
-
-if let unwrappedSubview = optionalSubview {
-  if let realVolume = volume {
-    // do something with unwrappedSubview and realVolume
-  }
-}
-``` 
 
 ## XML Guidance
 
