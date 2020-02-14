@@ -156,7 +156,7 @@ public val wideOpenProperty = 1
 private val myOwnPrivateProperty = "private"
 ```
 
-**GOOD:***
+**GOOD:**
 
 ```kotlin
 val wideOpenProperty = 1
@@ -226,7 +226,7 @@ __BAD:__
 
 ```kotlin
 for (i in 0..9) {
-    Log.i(TAG, "index=" + i);
+    Log.i(TAG, "index=" + i)
 }
 ```
 
