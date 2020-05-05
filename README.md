@@ -12,12 +12,14 @@ You should also check out our other style guides:
 
 ## Inspiration
 
-This style-guide is somewhat of a mash-up between the existing Kotlin language style guides, and a tutorial-readability focused Swift style-guide. The language guidance is drawn from: 
+This style-guide is somewhat of a mash-up between the existing Kotlin language style guides, and a tutorial-readability focused Swift style-guide. The language guidance is drawn from:
 
 - The [Android Kotlin style guide](https://android.github.io/kotlin-guides/style.html)
-- The [Kotlin Coding Conventions](https://kotlinlang.org/docs/reference/coding-conventions.html) 
-- The [Android contributors style guide](https://source.android.com/source/code-style.html)
-- The [Google Java Style Guide](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html).
+- The [Kotlin Coding Conventions](https://kotlinlang.org/docs/reference/coding-conventions.html)
+- The [Android contributors style guide](https://source.android.com/setup/contribute/code-style)
+- The [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html).
+
+
 
 Alterations to support additional readability in tutorials were inspired by the [raywenderlich.com Swift style guide](https://github.com/raywenderlich/swift-style-guide).
 
@@ -90,7 +92,7 @@ com.raywenderlich.funkywidget
 
 ### Classes & Interfaces
 
-Written in __UpperCamelCase__. For example `RadialSlider`. 
+Written in __UpperCamelCase__. For example `RadialSlider`.
 
 ### Methods
 
@@ -132,7 +134,7 @@ __BAD:__
 
 ```kotlin
 XMLHTTPRequest
-URL: String? 
+URL: String?
 findPostByID
 ```
 __GOOD:__
@@ -212,7 +214,7 @@ private enum CompassDirection { EAST, NORTH, WEST, SOUTH }
 
 ## Spacing
 
-Spacing is especially important in raywenderlich.com code, as code needs to be easily readable as part of the tutorial. 
+Spacing is especially important in raywenderlich.com code, as code needs to be easily readable as part of the tutorial.
 
 ### Indentation
 
@@ -274,7 +276,7 @@ Avoid block comments inline with code, as the code should be as self-documenting
 
 ## Semicolons
 
-Semicolons ~~are dead to us~~ should be avoided wherever possible in Kotlin. 
+Semicolons ~~are dead to us~~ should be avoided wherever possible in Kotlin.
 
 __BAD__:
 
@@ -296,7 +298,7 @@ if (horseGiftedByTrojans) {
 
 ## Getters & Setters
 
-Unlike Java, direct access to fields in Kotlin is preferred. 
+Unlike Java, direct access to fields in Kotlin is preferred.
 
 If custom getters and setters are required, they should be declared [following Kotlin conventions](https://kotlinlang.org/docs/reference/properties.html) rather than as separate methods.
 
@@ -381,13 +383,13 @@ when (anInput) {
 ```
 
 
-## Types 
+## Types
 
 Always use Kotlin's native types when available. Kotlin is JVM-compatible so **[TODO: more info]**
 
 ### Type Inference
 
-Type inference should be preferred where possible to explicitly declared types. 
+Type inference should be preferred where possible to explicitly declared types.
 
 __BAD:__
 
@@ -403,7 +405,7 @@ val something = MyType()
 val meaningOfLife = 42
 ```
 
-### Constants vs. Variables 
+### Constants vs. Variables
 
 Constants are defined using the `val` keyword, and variables with the `var` keyword. Always use `val` instead of `var` if the value of the variable will not change.
 
@@ -455,19 +457,19 @@ val colorName = "red"
 The following copyright statement should be included at the top of every source file:
 
 ```
-/* 
+/*
  * Copyright (c) 2020 Razeware LLC
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
  * distribute, sublicense, create a derivative work, and/or sell copies of the
  * Software in any work that is designed, intended, or marketed for pedagogical or
@@ -475,11 +477,11 @@ The following copyright statement should be included at the top of every source 
  * or information technology.  Permission for such use, copying, modification,
  * merger, publication, distribution, sublicensing, creation of derivative works,
  * or sale is expressly withheld.
- * 
+ *
  * This project and source code may use libraries or frameworks that are
  * released under various Open-Source licenses. Use of those libraries and
  * frameworks are governed by their own individual licenses.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -489,7 +491,7 @@ The following copyright statement should be included at the top of every source 
  * THE SOFTWARE.
  */
  ```
- 
+
 ## Smiley Face
 
 Smiley faces are a very prominent style feature of the raywenderlich.com site! It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic. The closing square bracket ] is used because it represents the largest smile able to be captured using ASCII art. A closing parenthesis ) creates a half-hearted smile, and thus is not preferred.
