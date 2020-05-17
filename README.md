@@ -61,6 +61,7 @@ From now on, projects you create _should_ follow the correct style guidelines.
   + [Constants vs. Variables](#constants-vs-variables)
   + [Companion Objects](#companion-objects)
   + [Optionals](#optionals)
+- [String](#string)
 - [XML Guidance](#xml-guidance)
 - [Language](#language)
 - [Copyright Statement](#copyright-statement)
@@ -403,7 +404,7 @@ val something = MyType()
 val meaningOfLife = 42
 ```
 
-### Constants vs. Variables 
+### Constants vs. Variables
 
 Constants are defined using the `val` keyword, and variables with the `var` keyword. Always use `val` instead of `var` if the value of the variable will not change.
 
@@ -427,7 +428,25 @@ When accessing a nullable value, use the safe call operator if the value is only
 editText?.setText("foo")
 ```
 
+## String
 
+Prefer using string template to concatenate string for cleaner code.
+
+__BAD:__
+
+```kotlin
+val love = "love"
+val language = "kotlin"
+val sentence = "I " + love + " " + language + " to code in android."
+```
+
+__GOOD:__
+
+```kotlin
+val love = "love"
+val language = "kotlin"
+val sentence = "I $love $language to code in android."
+```
 
 ## XML Guidance
 
@@ -514,3 +533,4 @@ raywenderlich.com team members:
 - [Ellen Shapiro](https://github.com/designatednerd)
 - [Ray Wenderlich](https://github.com/rwenderlich)
 - [Joe Howard](https://github.com/orionthwake)
+- [Wendy Yanto](https://github.com/WendyYanto)
