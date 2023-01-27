@@ -19,7 +19,7 @@ This style-guide is somewhat of a mash-up between the existing Kotlin language s
 - The [Android contributors style guide](https://source.android.com/source/code-style.html)
 - The [Google Java Style Guide](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html).
 
-Alterations to support additional readability in tutorials were inspired by the [raywenderlich.com Swift style guide](https://github.com/raywenderlich/swift-style-guide).
+Alterations to support additional readability in tutorials were inspired by the [Kodeco Swift style guide](https://github.com/kodecocodes/swift-style-guide).
 
 ## Android Studio Coding Style
 
