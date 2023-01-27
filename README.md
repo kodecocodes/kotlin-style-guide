@@ -1,4 +1,4 @@
-# The Official raywenderlich.com Kotlin Style Guide (in progress)
+# The Official Kodeco Kotlin Style Guide (in progress)
 
 This style guide is different from others you may see, because the focus is centered on readability for print and the web. We created this style guide to keep the code in our tutorials consistent.
 
