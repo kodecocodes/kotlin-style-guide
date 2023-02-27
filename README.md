@@ -79,13 +79,13 @@ Package names are similar to Java: all __lower-case__, multiple words concatenat
 __BAD__:
 
 ```kotlin
-com.RayWenderlich.funky_widget
+com.YourCompany.funky_widget
 ```
 
 __GOOD__:
 
 ```kotlin
-com.raywenderlich.funkywidget
+com.yourcompany.funkywidget
 ```
 
 ### Classes & Interfaces
@@ -212,7 +212,7 @@ private enum CompassDirection { EAST, NORTH, WEST, SOUTH }
 
 ## Spacing
 
-Spacing is especially important in raywenderlich.com code, as code needs to be easily readable as part of the tutorial. 
+Spacing is especially important in Kodeco code, as code needs to be easily readable as part of the tutorial. 
 
 ### Indentation
 
@@ -431,7 +431,7 @@ editText?.setText("foo")
 
 ## XML Guidance
 
-Since Android uses XML extensively in addition to Kotlin and Java, we have some rules specific to XML. These can be found in our [Java code standards](https://github.com/raywenderlich/java-style-guide#xml-guidance)
+Since Android uses XML extensively in addition to Kotlin and Java, we have some rules specific to XML. These can be found in our [Java code standards](https://github.com/kodecocodes/java-style-guide#xml-guidance)
 
 
 ## Language
@@ -456,7 +456,7 @@ The following copyright statement should be included at the top of every source 
 
 ```
 /* 
- * Copyright (c) 2022 Kodeco
+ * Copyright (c) 2023 Kodeco Inc.
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
