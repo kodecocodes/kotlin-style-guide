@@ -6,9 +6,9 @@ Our overarching goals are __conciseness__, __readability__ and __simplicity__.
 
 You should also check out our other style guides:
 
-* [Swift](https://github.com/raywenderlich/swift-style-guide)
-* [Objective-C](https://github.com/raywenderlich/objective-c-style-guide)
-* [Java](https://github.com/raywenderlich/java-style-guide)
+* [Swift](https://github.com/kodecocodes/swift-style-guide)
+* [Objective-C](https://github.com/kodecocodes/objective-c-style-guide)
+* [Java](https://github.com/kodecocodes/java-style-guide)
 
 ## Inspiration
 
@@ -17,7 +17,7 @@ This style-guide is somewhat of a mash-up between the existing Kotlin language s
 - The [Android Kotlin style guide](https://android.github.io/kotlin-guides/style.html)
 - The [Kotlin Coding Conventions](https://kotlinlang.org/docs/reference/coding-conventions.html) 
 - The [Android contributors style guide](https://source.android.com/source/code-style.html)
-- The [Google Java Style Guide](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html).
+- The [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html).
 
 Alterations to support additional readability in tutorials were inspired by the [Kodeco Swift style guide](https://github.com/kodecocodes/swift-style-guide).
 
@@ -59,7 +59,6 @@ From now on, projects you create _should_ follow the correct style guidelines.
 - [Types](#types)
   + [Type Inference](#type-inference)
   + [Constants vs. Variables](#constants-vs-variables)
-  + [Companion Objects](#companion-objects)
   + [Optionals](#optionals)
 - [XML Guidance](#xml-guidance)
 - [Language](#language)
@@ -408,10 +407,6 @@ val meaningOfLife = 42
 Constants are defined using the `val` keyword, and variables with the `var` keyword. Always use `val` instead of `var` if the value of the variable will not change.
 
 *Tip*: A good technique is to define everything using `val` and only change it to `var` if the compiler complains!
-
-### Companion Objects
-
-** TODO: A bunch of stuff about companion objects **
 
 ### Nullable Types
 
