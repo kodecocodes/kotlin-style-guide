@@ -1,4 +1,4 @@
-# The Official Kodeco Kotlin Style Guide (in progress)
+# The Official Kodeco Kotlin Style Guide
 
 This style guide is different from others you may see, because the focus is centered on readability for print and the web. We created this style guide to keep the code in our tutorials consistent.
 
@@ -487,7 +487,7 @@ The following copyright statement should be included at the top of every source 
  
 ## Smiley Face
 
-Smiley faces are a very prominent style feature of the raywenderlich.com site! It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic. The closing square bracket ] is used because it represents the largest smile able to be captured using ASCII art. A closing parenthesis ) creates a half-hearted smile, and thus is not preferred.
+Smiley faces are a very prominent style feature of the kodeco.com site! It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic. The closing square bracket ] is used because it represents the largest smile able to be captured using ASCII art. A closing parenthesis ) creates a half-hearted smile, and thus is not preferred.
 
 Bad:
 
@@ -500,7 +500,7 @@ Good:
 ## Credits
 
 This style guide is a collaborative effort from the most stylish
-raywenderlich.com team members:
+kodeco.com team members:
 
 - [Darryl Bayliss](https://github.com/DarrylBayliss)
 - [Tom Blankenship](https://github.com/tgblank)
